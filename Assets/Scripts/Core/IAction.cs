@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace RPG.Core
 {
+    // All scripts using action schdueler must contain the Cancel method 
     public interface IAction
     {
         void Cancel();

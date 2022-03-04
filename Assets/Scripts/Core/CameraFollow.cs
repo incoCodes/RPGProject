@@ -12,13 +12,7 @@ namespace RPG.Core
 
         public Vector3 offset;
 
-        // Start is called before the first frame update
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
+        // Delayed update to give camera smoother movement added offset to adjust camera XYZ
         void LateUpdate()
         {
             transform.position = target.position + offset;

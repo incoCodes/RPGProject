@@ -1040,6 +1040,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 413494, guid: c2849fd453abd0445a702a035f04ac60, type: 3}
   m_PrefabInstance: {fileID: 781208329}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1195710551 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2840101847856043620, guid: 0835fe1b40c964148a4e4c31cbc8ef46, type: 3}
+  m_PrefabInstance: {fileID: 8679436643270006994}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1195710552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195710551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 883d6809bf506cd4b87a15a9e35fed1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 20
 --- !u!1001 &1206438152
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1290,6 +1308,7 @@ Terrain:
   m_DrawHeightmap: 1
   m_DrawInstanced: 0
   m_DrawTreesAndFoliage: 1
+  m_StaticShadowCaster: 0
   m_ReflectionProbeUsage: 1
   m_MaterialTemplate: {fileID: 10652, guid: 0000000000000000f000000000000000, type: 0}
   m_BakeLightProbesForTrees: 1

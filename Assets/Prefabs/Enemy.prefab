@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!136 &-4989747060534795502
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2563482625066280393}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &132695282770904941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24,21 +38,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 883d6809bf506cd4b87a15a9e35fed1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 20
---- !u!136 &-4989747060534795502
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2563482625066280393}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  healthPoints: 20
 --- !u!1001 &582213764954286825
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52,15 +52,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3120086932913397292, guid: 5b4ad724aa4e21d4d92985eeb10f5711, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2.2596
       objectReference: {fileID: 0}
     - target: {fileID: 3120086932913397292, guid: 5b4ad724aa4e21d4d92985eeb10f5711, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.00000023841858
       objectReference: {fileID: 0}
     - target: {fileID: 3120086932913397292, guid: 5b4ad724aa4e21d4d92985eeb10f5711, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -4.647771
       objectReference: {fileID: 0}
     - target: {fileID: 3120086932913397292, guid: 5b4ad724aa4e21d4d92985eeb10f5711, type: 3}
       propertyPath: m_LocalRotation.w

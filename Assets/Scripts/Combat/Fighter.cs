@@ -8,7 +8,7 @@ namespace RPG.Combat
 {
     public class Fighter : MonoBehaviour , IAction
     {
-        Transform target;
+        Health target;
 
 
       
@@ -33,7 +33,7 @@ namespace RPG.Combat
             // Checks to see if enemy was within attack range and moves towards enemy if not and cancels movement and calls attack animation if within range
             if (!GetRange())
             {
-                GetComponent<Mover>().MoveTo(target.position);
+                GetComponent<Mover>().MoveTo(target.transform.position);
             }
 
             else
@@ -65,18 +65,19 @@ namespace RPG.Combat
         // Gets the attak distance between player and the enemy positon and checks if its less that the attack range of player
         private bool GetRange()
         {
-            return Vector3.Distance(transform.position, target.position) < weaponRange;
+            return Vector3.Distance(transform.position, target.transform.position) < weaponRange;
         }
         // sets target as a combat target and attack method goes through action schdueler as current action
         public void Attack(CombatTarget comTarget)
         {
             GetComponent<ActionSchdueler>().StartAction(this);
-            target = comTarget.transform;            
+            target = comTarget.GetComponent<Health>();            
             
         } 
         // sets target as null in order to cancel 
         public void Cancel()
         {
+            GetComponent<Animator>().SetTrigger("Stopattack");
             target = null;
         }    
 

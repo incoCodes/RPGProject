@@ -30,6 +30,7 @@ namespace RPG.Combat
             timeSinceLastAttack += Time.deltaTime;
             // Null check for target
             if (target == null) return;
+            if (target.IsDead()) return;
             // Checks to see if enemy was within attack range and moves towards enemy if not and cancels movement and calls attack animation if within range
             if (!GetRange())
             {
@@ -59,8 +60,7 @@ namespace RPG.Combat
         // Animation Event 
         void Hit()
         {
-            Health health = target.GetComponent<Health>();
-            health.TakeDamage(weaponDamage);
+            target.TakeDamage(weaponDamage);
         }
         // Gets the attak distance between player and the enemy positon and checks if its less that the attack range of player
         private bool GetRange()

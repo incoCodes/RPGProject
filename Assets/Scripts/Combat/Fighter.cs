@@ -35,6 +35,8 @@ namespace RPG.Combat
             if (!GetRange())
             {
                 GetComponent<Mover>().MoveTo(target.transform.position);
+                
+                
             }
 
             else
@@ -48,6 +50,7 @@ namespace RPG.Combat
         }
         private void AttackBehaviour()
         {
+            transform.LookAt(target.transform);
             if (timeSinceLastAttack > timeBetweenAttacks)
             {
                 // Triggers attack animation if attack time cooldown is less than last attack timer, resets timer once animation is triggered
@@ -61,11 +64,21 @@ namespace RPG.Combat
         void Hit()
         {
             target.TakeDamage(weaponDamage);
+           
         }
         // Gets the attak distance between player and the enemy positon and checks if its less that the attack range of player
         private bool GetRange()
         {
             return Vector3.Distance(transform.position, target.transform.position) < weaponRange;
+        }
+
+        public bool CanAttack(CombatTarget combatTarget)
+        {
+            if (combatTarget == null) return false;
+            Health targetToTest = combatTarget.GetComponent<Health>();
+
+            return targetToTest != null && !targetToTest.IsDead();
+
         }
         // sets target as a combat target and attack method goes through action schdueler as current action
         public void Attack(CombatTarget comTarget)
@@ -80,6 +93,8 @@ namespace RPG.Combat
             GetComponent<Animator>().SetTrigger("Stopattack");
             target = null;
         }    
+
+     
 
      
 

@@ -36,7 +36,6 @@ namespace RPG.Movement
             navMeshAgent.isStopped = false; 
         }
         // Cancels AI movement instantly  
-
         public void Cancel()
         {
             navMeshAgent.isStopped = true;

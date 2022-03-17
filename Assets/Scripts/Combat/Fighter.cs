@@ -55,14 +55,22 @@ namespace RPG.Combat
             {
                 // Triggers attack animation if attack time cooldown is less than last attack timer, resets timer once animation is triggered
                 // This will trigger the Hit() event
-                GetComponent<Animator>().SetTrigger("attack");
+                TriggerAttack();
                 timeSinceLastAttack = 0;
             }
-           
+
         }
+
+        private void TriggerAttack()
+        {
+            GetComponent<Animator>().ResetTrigger("Stopattack");
+            GetComponent<Animator>().SetTrigger("attack");
+        }
+
         // Animation Event 
         void Hit()
         {
+            if (target == null) return;
             target.TakeDamage(weaponDamage);
            
         }
@@ -90,14 +98,19 @@ namespace RPG.Combat
         // sets target as null in order to cancel 
         public void Cancel()
         {
-            GetComponent<Animator>().SetTrigger("Stopattack");
+            StopAttack();
             target = null;
-        }    
+        }
 
-     
+        private void StopAttack()
+        {
+            GetComponent<Animator>().ResetTrigger("attack");
+            GetComponent<Animator>().SetTrigger("Stopattack");
+        }
 
-     
 
-      
+
+
+
     }
 }

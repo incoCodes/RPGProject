@@ -24,7 +24,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 883d6809bf506cd4b87a15a9e35fed1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  healthPoints: 100
 --- !u!1001 &5923210993781016338
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -135,6 +135,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3136512534384168736, guid: 5b4ad724aa4e21d4d92985eeb10f5711, type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3136512534384168736, guid: 5b4ad724aa4e21d4d92985eeb10f5711, type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []

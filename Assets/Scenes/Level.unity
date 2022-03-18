@@ -740,6 +740,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6574510732976268687, guid: 5d26009d898cca748b7022e20aa47a10, type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8097833595749797527, guid: 5d26009d898cca748b7022e20aa47a10, type: 3}
       propertyPath: m_Name
       value: Player

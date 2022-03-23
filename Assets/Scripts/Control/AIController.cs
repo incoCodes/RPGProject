@@ -2,23 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using RPG.Combat;
+using RPG.Core;
 
 namespace RPG.Control
 {
     public class AIController : MonoBehaviour
     {
         [SerializeField] float chaseDist = 5f;
-        [SerializeField] float weaponRange = 2f;
+      
 
         Fighter fighter;
         GameObject player;
+        Health health;
         private void Start()
         {
             player = GameObject.FindWithTag("Player");
             fighter = GetComponent<Fighter>();
+            health = GetComponent<Health>();
         }
         private void Update()
         {
+            if (health.IsDead()) return;
             if (InAttackRange() && fighter.CanAttack(player))
             {
                 fighter.Attack(player);
@@ -27,6 +31,8 @@ namespace RPG.Control
             {
                 fighter.Cancel();
             }
+
+            
         }
         private bool InAttackRange()
         {

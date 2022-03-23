@@ -21,7 +21,7 @@ namespace RPG.Combat
         [SerializeField]
         float timeBetweenAttacks = 1f;
 
-        float timeSinceLastAttack = 0;
+        float timeSinceLastAttack = Mathf.Infinity;
 
         
 

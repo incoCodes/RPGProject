@@ -9,17 +9,20 @@ namespace RPG.Movement
 {// Goes through the action schdueler 
     public class Mover : MonoBehaviour , IAction
     {
+        Health health;
         // Variables for AI
         NavMeshAgent navMeshAgent;
 
         private void Start()
         {
             navMeshAgent = GetComponent<NavMeshAgent>();
+            health = GetComponent<Health>();
         }
 
         // Update is called once per frame
         void Update()
         {
+            navMeshAgent.enabled = !health.IsDead();
             UpdateAnimator();
         }
         // Calls MoveTo method through the action schdueler 

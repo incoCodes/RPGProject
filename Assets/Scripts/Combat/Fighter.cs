@@ -108,6 +108,12 @@ namespace RPG.Combat
             GetComponent<Animator>().SetTrigger("Stopattack");
         }
 
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, weaponRange);
+        }
+
 
 
 

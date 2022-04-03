@@ -16,26 +16,22 @@ namespace RPG.Control
                 Gizmos.DrawLine(GetWayPoint(i), GetWayPoint(j));
             }
 
-
-
-
-              int GetNextIndex(int i)
-            {
-                if (i + 1 >= transform.childCount)
-                {
-                    return 0;
-                }
-                return i + 1;
-
-            }
-
-
-
-            Vector3 GetWayPoint(int i)
-            {
-                return transform.GetChild(i).position;
-            }
         }
-        
+
+        public int GetNextIndex(int i)
+        {
+            if (i + 1 >= transform.childCount)
+            {
+                return 0;
+            }
+            return i + 1;
+
+        }
+
+       public Vector3 GetWayPoint(int i)
+        {
+            return transform.GetChild(i).position;
+        }
+
     }
 }
